@@ -4,7 +4,7 @@ title: 主页
 
 :::caution
 
-本文档站采用 [MIT协议](https://github.com/ZengXiaoPi/Simpfun_Wiki/blob/main/LICENSE) 。  
+本文档站采用 [MIT协议](https://github.com/Twelve-eight/Simpfun_Wiki/blob/main/LICENSE) 。  
 
 转载代码，配置，文档，请保留版权信息。
 
@@ -14,7 +14,7 @@ title: 主页
 
 此维基用爱驱动！
 
-欢迎您[加入我们的编辑](https://github.com/ZengXiaoPi/Simpfun_Wiki)。
+欢迎您[加入我们的编辑](https://github.com/Twelve-eight/Simpfun_Wiki)。
 
 **↗文档已加入搜索功能，请善用搜索。**
 
@@ -22,4 +22,4 @@ title: 主页
 
 ## 本维基贡献者
 
-![Github](https://contrib.rocks/image?repo=ZengXiaoPi/Simpfun_Wiki)
+![Github](https://contrib.rocks/image?repo=Twelve-eight/Simpfun_Wiki)

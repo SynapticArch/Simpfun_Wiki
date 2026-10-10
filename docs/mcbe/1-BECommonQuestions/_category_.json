@@ -3,13 +3,12 @@
   "label": "【必看】常见问题",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
   "link": {
     "type": "generated-index",
     "title": "Minecraft BE常见问题"
   },
   "customProps": {
-    "description": "This description can be used in the swizzled DocCard"
+    "description": "Minecraft 基岩版常见问题"
   }
 }
 

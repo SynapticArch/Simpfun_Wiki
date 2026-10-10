@@ -22,7 +22,7 @@ title: 导入存档到服务端
 /playerdata
 /poi
 /region
-/serverconfig
+/serverconfig（仅 Forge 生成，vanilla 存档没有）
 /stats
 
 文件：

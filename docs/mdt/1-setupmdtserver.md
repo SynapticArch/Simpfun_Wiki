@@ -31,13 +31,7 @@ title: 如何像人类一样开像素工厂服务器
 
 您如果像我一样**无法访问**github，您可以尝试一下使用**移动数据**连接或者使用**第三方科技**，当然***最简单的办法***就是去[这里](https://www.baidu.com)寻找该服务器包
 
-当然还有一种方法那便是参考下面链接并在浏览器打开
-
-`https://ghproxy.com/https://github.com/Anuken/Mindustry/releases/download/v您的版本号/server-release.jar`
-
-例：
-
-`https://ghproxy.com/https://github.com/Anuken/Mindustry/releases/download/v145.1/server-release.jar`
+也可以尝试使用Github加速工具（如[Watt Toolkit](https://steampp.net/)，勾选Github加速）后再访问上面的链接，或寻找其他可用的Github加速镜像（此类镜像时效性较强，请自行确认可用性）。
 
 :::
 
@@ -75,8 +69,8 @@ title: 如何像人类一样开像素工厂服务器
 
 - **第七步**
 
-> - 找到**start.sh**并找到**`#${openjdk8} -jar server-release.jar`**字样
-- 将前面的*#*删除并保存，当然如果您对jdk有要求可以参考上文的预置镜像，例如`${openjdk11} -jar server-release.jar`
+> - 找到**start.sh**并找到**`#${openjdk17} -Xms1024M -Xmx${maxmem}M -jar server-release.jar nogui`**字样（默认脚本里被注释掉的示例启动行）
+- 将前面的*#*删除并保存，当然如果您对jdk有要求可以换成其他预置的jdk变量，例如`${openjdk11}`
 ```
 注意:上文的命令内的server-release.jar为您上传的文件名，灵活一点
 ```

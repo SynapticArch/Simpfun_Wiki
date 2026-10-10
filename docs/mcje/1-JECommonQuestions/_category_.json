@@ -3,13 +3,12 @@
   "label": "【必看】常见问题",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
   "link": {
     "type": "generated-index",
     "title": "Minecraft Java版常见问题"
   },
   "customProps": {
-    "description": "Test"
+    "description": "Minecraft Java 版常见问题"
   }
 }
 

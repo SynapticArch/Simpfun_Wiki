@@ -8,7 +8,7 @@ title: 更新 TModLoader
 
 1. 下载 [Watt Toolkit](https://steampp.net/) ，打开后勾选 Github 选项，并加速。
 
-2. 进入 [Release](https://github.com/tModLoader/tModLoader/releases/latest) ，下载 `TModLoader.zip` 。
+2. 进入 [Release](https://github.com/tModLoader/tModLoader/releases/latest) ，下载 `tModLoader.zip` 。
 
 3. 进入控制台，删除以下文件和文件夹：
 
@@ -46,4 +46,4 @@ title: 更新 TModLoader
 </details>
 
 
-4. 将刚刚下载的 `TModLoader.zip` 上传，并解压即可。
+4. 将刚刚下载的 `tModLoader.zip` 上传，并解压即可。

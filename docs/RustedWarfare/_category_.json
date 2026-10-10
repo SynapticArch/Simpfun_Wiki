@@ -4,12 +4,11 @@
   "label": "铁锈战争（RW-HPS）",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
   "link": {
     "type": "generated-index",
     "title": "铁锈战争（RW-HPS）"
   },
   "customProps": {
-    "description": "This description can be used in the swizzled DocCard"
+    "description": "铁锈战争（RW-HPS）服务端"
   }
 }

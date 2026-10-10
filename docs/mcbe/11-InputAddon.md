@@ -50,8 +50,8 @@ title: 如何添加Addon(附加包)
 
 :::caution 提示
 
-适用服务端：LLBDS  
-不适用服务端：原版BDS，所有Nukkit系服务端  
+适用服务端：LLBDS (LiteLoaderBDS LL2；其继任者 LeviLamina LL3 是否同样适用 `[需要验证]`)
+不适用服务端：原版BDS，所有Nukkit系服务端
 
 :::
 

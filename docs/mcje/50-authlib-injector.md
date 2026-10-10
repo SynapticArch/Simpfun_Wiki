@@ -38,7 +38,7 @@ title: 进阶文档：使用第三方验证服务器登录
 
 ![全然わかんない 全然わかんない 全然わかんない~本当くだんない 本当くだんない 本当くだんない](/img/pages/AuthlibInjector-1.png)
 
-2. 从[Simpfun GitLab](https://gitlab.simpfun.me/ZengXiaoPi/simpfun_wiki_res/-/raw/main/authlib-injector-1.2.4.jar?inline=false)下载。
+2. 或从[authlib-injector的GitHub发布页](https://github.com/yushijinhun/authlib-injector/releases)下载最新版。
 
 下载后扔到与`start.sh`同级的目录。
 
@@ -48,7 +48,9 @@ title: 进阶文档：使用第三方验证服务器登录
 
 :::tip
 
-注：高版本forge服务器启动游戏是运行一个txt文件中的指令。请在`start.sh`中找到该文件并在txt内配置。
+注：高版本forge服务器启动游戏是运行一个txt文件中的指令（Forge/NeoForge 1.17+ 为 `libraries/net/minecraftforge/forge/<ver>/unix_args.txt`）。请在`start.sh`中找到该文件并在txt内配置。
+
+:::
 
 如果你不想自己配置命令，可以使用这个[我的世界服务器启动命令生成器](/MinecraftBat)
 
@@ -68,7 +70,7 @@ ${openjdk17} -Xms1024M -Xmx${maxmem}M -jar server-release.jar
 
 它表示：
 
-  使用名为`authlib-injector-1.2.4.jar`的文件进行第三方登录；
+  使用名为`authlib-injector-1.2.4.jar`的文件进行第三方登录（文件名需与你实际上传的jar一致，版本号以你下载的为准）；
   
   第三方登录文件与服务器核心处在同一目录下；
   
@@ -96,7 +98,7 @@ ${openjdk17} -Xms1024M -Xmx${maxmem}M -javaagent:authlib-injector-1.2.4.jar=http
 
 :::tip
 
-注：修改了登录方式到第三方的客户端无法用于验证正版，多人游戏下只能加入启用相同第三方验证服务器的服务器和离线服务器；单人游戏不受影响。
+注：PCL2/HMCL 等启动器是**添加**一个外置登录账户而非替换微软登录，正版账户仍可使用；但使用第三方登录的角色无法通过正版验证，多人游戏下只能加入启用相同第三方验证服务器的服务器和离线服务器；单人游戏不受影响。
 
 :::
 

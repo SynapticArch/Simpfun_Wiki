@@ -16,3 +16,5 @@ title: 开启死亡不掉落
 /gamerule keepinventory true
 ```
 
+注：在BDS服务端执行`/gamerule`需要`allow-cheats=true`且玩家拥有op权限，详见[为服务器开启作弊](./2-allow_cheat.md)。
+

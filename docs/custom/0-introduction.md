@@ -6,14 +6,14 @@ title: 必须看的前言
 
 + 如果你打算使用自定义开服的话，请确保你已经具备了一定的开服经验和英文阅读水平。
 + 没有这方面的经验不要轻易尝试这部分的内容！
-+ 我们欢迎大家参与完善文档。请到Github[提交issue](https://github.com/ZengXiaoPi/Simpfun_Wiki/issues)或者[发起Pull Requests](https://github.com/ZengXiaoPi/Simpfun_Wiki/pulls)。
++ 我们欢迎大家参与完善文档。请到Github[提交issue](https://github.com/Twelve-eight/Simpfun_Wiki/issues)或者[发起Pull Requests](https://github.com/Twelve-eight/Simpfun_Wiki/pulls)。
 :::
 
 ## 什么是“自定义”预设
 
 `“自定义”预设`是指只提供运行环境，技术细节均由个人解决的实例镜像，门槛较高。
 
-服务器在创建后，根目录下只有一个`start.sh`(Linux)或`start.bat`(Windows)。
+服务器在创建后，根目录下只有一个`start.sh`(Linux)或`start.cmd`(Windows)。
 
 ## “自定义”预设都有哪些？
 
@@ -41,7 +41,7 @@ title: 必须看的前言
 
 ### Server2019镜像
 
-使用Windows Server 2019的镜像，运行在Windows Docker下。内置多种运行库，包括`.Net 6.0.20`，`VC++ 2015——2022`，`Python 3.11.5`，`zulu JDK 8.0.382(Java 8)`，`zulu JDK 17.0.8(Java 17)`，如下图所示。且在`start.bat`内已定义Java和Python的路径，直接调用即可。运行基岩版MC服务器的首选。
+使用Windows Server 2019的镜像，运行在Windows Docker下。内置多种运行库，包括`.Net 6.0.20`，`VC++ 2015——2022`，`Python 3.11.5`，`zulu JDK 8.0.382(Java 8)`，`zulu JDK 17.0.8(Java 17)`，如下图所示。且在`start.cmd`内已定义Java和Python的路径，直接调用即可。运行基岩版MC服务器的首选。
 ![無駄だよ～](/img/pages/CustomServer-in-2.jpg)
 
 :::caution 提示
@@ -68,7 +68,7 @@ MCBE：当简幻欢缺失了你需要的游戏版本时，需要使用自定义�
 
 :::info 提示
 
-这部分写的是Windows镜像下和Linux镜像下默认的`seart.cmd`/`start.sh`，如果你“一不小心”把默认的删了就可以来这里恢复。
+这部分写的是Windows镜像下和Linux镜像下默认的`start.cmd`/`start.sh`，如果你“一不小心”把默认的删了就可以来这里恢复。
 
 :::
 

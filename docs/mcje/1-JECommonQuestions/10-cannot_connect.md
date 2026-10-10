@@ -13,7 +13,7 @@ title: 常见无法连接服务器的错误提示的解决方案
 :::caution 待完善
 
 ~~别催了在写了~~  
-我们需要收集一些常见错误，如果您有能力请在[simpfun.icu](https://simpfun.icu/d/99)或者[Github](https://github.com/ZengXiaoPi/Simpfun_Wiki/issues)上提交一些常见错误，我们在验证后会加速编写到这里。在此感谢您做出的贡献。
+我们需要收集一些常见错误，如果您有能力请在[Github](https://github.com/Twelve-eight/Simpfun_Wiki/issues)上提交一些常见错误，我们在验证后会加速编写到这里。在此感谢您做出的贡献。
 
 :::
 
@@ -38,9 +38,9 @@ title: 常见无法连接服务器的错误提示的解决方案
 
 ![二人だけの空が広がる夜に](/img/pages/MCJE-CannotConnect-2.png)
 
-错误全文：`Internal Exception: java.langillegalstateException: Invalid characters in username`
+错误全文：`Internal Exception: java.lang.IllegalStateException: Invalid characters in username`
 
-翻译：`内部异常：java.langillegalstateException：用户名中的字符无效`
+翻译：`内部异常：java.lang.IllegalStateException：用户名中的字符无效`
 
 原因：
 

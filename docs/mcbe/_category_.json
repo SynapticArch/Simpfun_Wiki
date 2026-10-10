@@ -3,12 +3,11 @@
   "label": "Minecraft BE",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
   "link": {
     "type": "generated-index",
     "title": "Minecraft BE"
   },
   "customProps": {
-    "description": "This description can be used in the swizzled DocCard"
+    "description": "Minecraft 基岩版服务端文档"
   }
 }

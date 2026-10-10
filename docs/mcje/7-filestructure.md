@@ -107,7 +107,7 @@ Bukkit系端的各种分支比较多，此处挑两个比较有代表性的服�
 | :--- | :--- |
 | .fabric | 通常包含有关mod和开发环境的配置信息，用于存储一些与Fabric模组和开发环境相关的设置。 |
 | mods | 存放mod本体的文件夹。 |
-| worlds | **与Vanilla端保持一致。** |
+| world | **与Vanilla端保持一致。** |
 | fabric-server-launch.jar | 用于启动Fabric服务端。 |
 | fabric-server-launcher.properties | Fabric端的设置文件。但里面只有一个`serverJar`用来设定游戏核心文件名。 |
 | server.jar | 原版服务端核心。<br/>如果你改了此文件的名称，那么`fabric-server-launcher.properties`内的`serverJar`你也得改！<br/>PS：**不要尝试从此文件启动服务端，不然会不加载mod！** |
@@ -127,7 +127,7 @@ Bukkit系端的各种分支比较多，此处挑两个比较有代表性的服�
 | config | 存储FML和各个模组(mod)的配置文件的目录。|
 | defaultconfigs | 通常包含了模组(mod)的默认配置文件。这些文件是模组作者提供的初始配置，用于确保模组在首次安装时有一个合理的默认设置。 |
 | mods | 存放mod本体的文件夹。 |
-| worlds | **与Vanilla端保持一致。** |
+| world | **与Vanilla端保持一致。** |
 | *user_jvm_args.txt* | Forge服务端构建时生成的一个完全没有用的文件。 |
 
 需要注意的是，1.17.1+版本的Forge服务端你在根目录下是找不到Forge核心与原版核心的。其启动命令应如下所示：
@@ -146,12 +146,12 @@ java -server -Xms1024m -Xmx4096M @libraries/net/minecraftforge/forge/1.20.1-47.1
 
 ### NeoForge
 
-与1.17.1+版本的Forge服务端一致，在根目录下是找不到NeoForge核心与原版核心的。由于更改了项目名称，其启动命令应如下所示：
+NeoForge端的文件结构与1.17.1+版本的Forge服务端一致（`config`、`defaultconfigs`、`mods`、`world`、`user_jvm_args.txt`、`libraries`），在根目录下同样找不到NeoForge核心与原版核心。由于更改了项目名称，其启动命令应如下所示：
 
 Linux：
 
 ```sh
-${openjdk17} -server -Xms1024m -Xmx4096M @libraries/net/neoforged/neoforge/20.2.86/win_args.txt "$@" -nogui
+${openjdk17} -server -Xms1024m -Xmx4096M @libraries/net/neoforged/neoforge/20.2.86/unix_args.txt "$@" -nogui
 ```
 
 Windows：
@@ -179,7 +179,9 @@ java -server -Xms1024m -Xmx4096M @libraries/net/neoforged/neoforge/20.2.86/win_a
 | defaultconfigs | (来自Forge)通常包含了模组(mod)的默认配置文件。这些文件是模组作者提供的初始配置，用于确保模组在首次安装时有一个合理的默认设置。 |
 | mods | (来自Forge)存放mod本体的文件夹。 |
 | plugins | (来自Spigot)存放插件本体以及插件配置、数据等的文件夹。插件本体直接放入此文件夹即可。 |
-| worlds | **与Vanilla端保持一致。** |
+| world | 在**所有Bukkit系服务端**内，世界存档**被拆成了三个文件夹**。<br/>此文件夹存储的是主世界数据和玩家数据。<br/> 同时，[server.properties](./20-serverproperties.md)内的`level-name`的值会被同时应用在三个世界上面，即同时替换world字符。 |
+| world_nether | 存放下界(地狱)数据。 |
+| world_the_end | 存放末地数据。 |
 | arclight.conf | Arclight端的配置文件。 |
 | arclight-forge-1.20.1-1.0.1.jar | Arclight端的构建器与启动文件，需要使用此文件启动Arclight服务端。 |
 | bukkit.yml | (来自Spigot)Bukkit系服务端的配置文件之一，用于配置一些基本的服务器设置。<br/>所有CraftBukkit的分支都有此配置文件。 |
@@ -202,7 +204,9 @@ CatServer 是一个同时支持 Forge 模组与 Bukkit 插件的混合端。与 
 | defaultconfigs | (来自Forge)通常包含了模组(mod)的默认配置文件。这些文件是模组作者提供的初始配置，用于确保模组在首次安装时有一个合理的默认设置。 |
 | mods | (来自Forge)存放mod本体的文件夹。 |
 | plugins | (来自Spigot)存放插件本体以及插件配置、数据等的文件夹。插件本体直接放入此文件夹即可。 |
-| worlds | **与Vanilla端保持一致。** |
+| world | 在**所有Bukkit系服务端**内，世界存档**被拆成了三个文件夹**。<br/>此文件夹存储的是主世界数据和玩家数据。<br/> 同时，[server.properties](./20-serverproperties.md)内的`level-name`的值会被同时应用在三个世界上面，即同时替换world字符。 |
+| world_nether | 存放下界(地狱)数据。 |
+| world_the_end | 存放末地数据。 |
 | bukkit.yml | (来自Spigot)Bukkit系服务端的配置文件之一，用于配置一些基本的服务器设置。<br/>所有CraftBukkit的分支都有此配置文件。 |
 | *commands.yml* | (来自Spigot)一个配置文件，其中包含 CraftBukkit 服务器的自定义别名和命令方块覆盖。<br/> *PS：正常情况下你大概率用不到，甚至这东西都是去[互联网档案馆](https://web.archive.org/web/20160325102040/http://wiki.bukkit.org/Commands.yml)查的资料。* |
 | *help.yml* | (来自Spigot)这是Bukkit的帮助配置文件。<br/>默认情况下，您不需要修改此文件。所有插件命令的帮助主题由插件自动提供。<br/>*PS：正常情况下你大概率也用不到，因为现在的插件都会提供对应的帮助。*|
@@ -215,6 +219,7 @@ CatServer 是一个同时支持 Forge 模组与 Bukkit 插件的混合端。与 
 混合Forge模组和Bukkit插件同样存在稳定性风险，部分模组或插件可能无法正常工作，遇到问题请先排查兼容性。
 
 :::
+
 ### Mohist
 
 Mohist 同样是一个同时支持 Forge 模组与 Bukkit 插件的混合端，文件结构与 CatServer 类似，基本可以看作 Vanilla 端与 Forge 端的叠加，再额外加上 Bukkit 系的插件目录：
@@ -227,7 +232,9 @@ Mohist 同样是一个同时支持 Forge 模组与 Bukkit 插件的混合端，�
 | defaultconfigs | (来自Forge)通常包含了模组(mod)的默认配置文件。这些文件是模组作者提供的初始配置，用于确保模组在首次安装时有一个合理的默认设置。 |
 | mods | (来自Forge)存放mod本体的文件夹。 |
 | plugins | (来自Spigot)存放插件本体以及插件配置、数据等的文件夹。插件本体直接放入此文件夹即可。 |
-| worlds | **与Vanilla端保持一致。** |
+| world | 在**所有Bukkit系服务端**内，世界存档**被拆成了三个文件夹**。<br/>此文件夹存储的是主世界数据和玩家数据。<br/> 同时，[server.properties](./20-serverproperties.md)内的`level-name`的值会被同时应用在三个世界上面，即同时替换world字符。 |
+| world_nether | 存放下界(地狱)数据。 |
+| world_the_end | 存放末地数据。 |
 | bukkit.yml | (来自Spigot)Bukkit系服务端的配置文件之一，用于配置一些基本的服务器设置。<br/>所有CraftBukkit的分支都有此配置文件。 |
 | *commands.yml* | (来自Spigot)一个配置文件，其中包含 CraftBukkit 服务器的自定义别名和命令方块覆盖。<br/> *PS：正常情况下你大概率用不到，甚至这东西都是去[互联网档案馆](https://web.archive.org/web/20160325102040/http://wiki.bukkit.org/Commands.yml)查的资料。* |
 | *help.yml* | (来自Spigot)这是Bukkit的帮助配置文件。<br/>默认情况下，您不需要修改此文件。所有插件命令的帮助主题由插件自动提供。<br/>*PS：正常情况下你大概率也用不到，因为现在的插件都会提供对应的帮助。*|

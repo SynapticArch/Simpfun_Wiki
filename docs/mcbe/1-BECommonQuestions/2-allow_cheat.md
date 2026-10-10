@@ -10,7 +10,7 @@ title: 为服务器启用作弊
 
 :::
 
-在2023.11.18，简幻欢预设已修复该问题，现在`allow-cheat`在简幻欢预设服务端内默认为`true`。
+在2023-11-18，简幻欢预设已修复该问题，现在`allow-cheats`在简幻欢预设服务端内默认为`true`。
 
 **如果您的服务端不是简幻欢预设，请接着往下看。**
 
@@ -18,18 +18,20 @@ title: 为服务器启用作弊
 
 如果发现自己**拥有op权限**却不能执行`/give`、`/gamemode`、`/time`、`/tp`和`/gamerule`等命令的话，说明服务器**未启用作弊**。
 
+注：BE 的`/op`命令要求目标玩家在线，且`allow-cheats=true`是游戏内执行大部分命令的前提。
+
 ## 启用作弊
 
-:::tip
+::::tip
 
 为了保险，最好在服务器关闭状态下进行。
 
-:::
+::::
 
 在服务器文件管理根目录找到`server.properties`文件并打开，在其中找到这一行：
 
 ```ini
-allow-cheat=false
+allow-cheats=false
 # If true then cheats like commands can be used.
 # Allowed values: "true" or "false"
 ```
@@ -51,6 +53,8 @@ allow-cheat=false
 ```ini
 op-permission-level=4
 ```
+
+注：`op-permission-level`为BDS隐藏有效键，不在官方默认生成的`server.properties`中，需手动添加 (`[需要验证]`：社区与BDS内置文档确认有效，但Minecraft Wiki未列为正式键)。
 
 如图所示
 

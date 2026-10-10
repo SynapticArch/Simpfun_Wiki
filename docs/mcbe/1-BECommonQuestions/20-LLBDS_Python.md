@@ -4,6 +4,12 @@ title: LLBDS的Python报错解决方法
 
 LLBDS端有极低概率会出现一个关于Python的罕见报错，导致服务端无法启动。本篇Wiki将教你如何处理这个问题。
 
+::::info 提示
+
+LiteLoaderBDS (LL2) 已于2023-10-25停止更新并归档，现推荐使用LeviLamina (LL3)，详见[服务端的介绍](../9-Introduction-Server.md)。
+
+::::
+
 -----
 
 {/*他妈的说是极低概率结果一下午在群里碰到两个*/}

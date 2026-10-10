@@ -9,25 +9,25 @@
 
 ## 网站
 
-主域名：
-
-[https://simpdoc.top/](https://simpdoc.top/)
-
-备用域名：
-
-[https://zxp.simpfun.me/](https://zxp.simpfun.me/)
+当前规范域名：
 
 [https://sfe.zxpweb.link/](https://sfe.zxpweb.link/)
 
+历史域名：
+
+[https://simpdoc.top/](https://simpdoc.top/)
+
+[https://zxp.simpfun.me/](https://zxp.simpfun.me/)
+
 ## 贡献者
 
-<a href="https://github.com/ZengXiaoPi/Simpfun_Wiki/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ZengXiaoPi/Simpfun_Wiki" />
+<a href="https://github.com/Twelve-eight/Simpfun_Wiki/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Twelve-eight/Simpfun_Wiki" />
 </a>
 
 ## LICENSE
 
-[MIT](https://github.com/ZengXiaoPi/Simpfun_Wiki/blob/main/LICENSE)
+[MIT](https://github.com/Twelve-eight/Simpfun_Wiki/blob/main/LICENSE)
 
 ## 本地开发
 

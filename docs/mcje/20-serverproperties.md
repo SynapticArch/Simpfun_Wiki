@@ -8,7 +8,7 @@ server.properties是储存多人游戏（Minecraft或Minecraft Classic）服务�
 
 在编辑server.properties时，行之间的顺序可以打乱，但文件结构不能改变。每一行的等号之前的文本为变量名，你不应该修改这些内容。等号后面为变量的值，你可以按照规则自行编辑。以#开头的行为注释，添加、修改或移除注释行不会对游戏造成影响。
 
-保存了server.properties的更改之后，服务端必须重新启动才能使更改生效，另一种选择是在服务器控制台或游戏中使用/reload命令重新加载，这也能获得同样的效果。
+保存了server.properties的更改之后，服务端必须重新启动才能使更改生效。
 
 如果server.properties文件未列出下文中所有的属性（例如服务端版本更新加入新属性，或该文件还未创建），那么服务器在启动时会重写server.properties补全缺失的属性，并将缺失的属性值设为默认值。
 
@@ -35,6 +35,14 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 
 :::
 
+## accepts-transfers：接受转移连接
+
+*wiki：允许服务端接受以Transfer数据包作为登录请求的传入连接。*
+
+此项默认为`false`。
+
+-----
+
 ## allow-flight：允许飞行
 
 此处飞行指的是漂浮在空中，鞘翅移动，漂浮效果不算在内。
@@ -46,6 +54,14 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 -----
 
 ## allow-nether：启用下界
+
+:::warning
+
+此项已于 JE 1.21.9（快照 25w35a）起从`server.properties`中移除，改为游戏规则`allow_entering_nether_using_portals`（默认`true`）控制。
+
+:::
+
+以下说明仅适用于旧版本。
 
 如果你不想要地狱这个维度可以把它关掉，会导致地狱维度不生成，且无法进入。
 
@@ -69,17 +85,9 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 
 -----
 
-## debug：修bug
-
-如果服务器出现bug则自动发送错误报告给mojang帮助改善，如果是mod服建议关闭。
-
-此项默认为`false`。
-
------
-
 ## difficulty：游戏难度
 
-此项的合法值为`peaceful`（和平），`easy`（简单），`normal`（普通）和`hard`（困难）。  、
+此项的合法值为`peaceful`（和平），`easy`（简单），`normal`（普通）和`hard`（困难）。
 
 同时可以指定旧版难度编号0（和平），1（简单），2（普通）及3（困难），服务器会自动翻译。
 
@@ -89,9 +97,19 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 
 ## enable-command-block：启用命令方块
 
+:::warning
+
+此项已于 JE 1.21.9（快照 25w35a）起从`server.properties`中移除，改为游戏规则`command_blocks_work`（默认`true`）控制。
+
+:::
+
+以下说明仅适用于旧版本。
+
 如果禁用此项则无法使用命令方块，表现为能够获取命令方块但保存命令时显示`命令方块未在此服务器启用`。
 
 此项默认为`false`。
+
+注意迁移后对应的游戏规则`command_blocks_work`默认为`true`。
 
 -----
 
@@ -100,6 +118,38 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 *（“公开具有对象名称和两个属性的 MBean“引自minecraft wiki机翻）和游戏的[tick](https://zh.minecraft.wiki/w/%E5%88%BB)值。*
 
 为了在Java启动时运行jmx，还需要添加几项启动参数。详见[Oracle给的配置文档](https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html)
+
+此项默认为`false`。
+
+-----
+
+## bug-report-link：错误报告链接
+
+*wiki：服务器"report_bug"链接的URL，比如由于数据包处理错误导致断开连接时，会在界面上显示用于引导玩家提交错误报告或获取帮助的地方。留空则不发送该链接。*
+
+此项默认为空白。
+
+-----
+
+## chat-spam-threshold-seconds：刷屏踢出阈值
+
+*wiki：设置服务器踢出过于频繁发送聊天消息的玩家的频率阈值。玩家每发送一条聊天消息计数器加1，每经过一刻（1/20秒）计数器减1，计数器超过此值时玩家会被踢出。设为`0`表示无限制。*
+
+此项默认为`10`。
+
+-----
+
+## command-spam-threshold-seconds：命令刷屏踢出阈值
+
+*wiki：设置服务器踢出过于频繁发送命令的玩家的频率阈值，机制与`chat-spam-threshold-seconds`相同。设为`0`表示无限制。*
+
+此项默认为`10`。
+
+-----
+
+## enable-code-of-conduct：启用行为准则
+
+*wiki：启用后服务器会在与server.properties同级的`codeofconduct`文件夹中查找行为准则文件（文件名格式为`<语言代码>.txt`），向玩家展示与其语言匹配的行为准则。*
 
 此项默认为`false`。
 
@@ -137,6 +187,8 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 
 此项默认为`true`。
 
+启用此项也会阻止玩家发送未签名的聊天消息。
+
 -----
 
 ## enforce-whitelist：强制启用白名单
@@ -161,7 +213,7 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 
 如果启用则玩家连入游戏时会被强制更改为设置的游戏模式，禁用则沿用退出时的游戏模式。
 
-此项默认为false，如果启用请将false改为游戏模式。
+此项默认为`false`，如果启用请将`false`改为`true`。
 
 关于游戏模式请查看：`gamemode`
 
@@ -177,7 +229,7 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 
 ## gamemode：游戏模式
 
-关于游戏模式的更多信息详见[minecrfat wiki](https://zh.minecraft.wiki/w/%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F)
+关于游戏模式的更多信息详见[Minecraft Wiki](https://zh.minecraft.wiki/w/%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F)
 
 此项可设定为旧版值`0`（生存），`1`（创造），`2`（冒险）和`3`（旁观）
 
@@ -187,7 +239,7 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 
 ## generate-structures：生成结构
 
-决定是否生成结构（如村庄、女巫小屋、废弃矿井和沙漠神殿等）。但即使关闭，地牢（Dungeness）也会生成。
+决定是否生成结构（如村庄、女巫小屋、废弃矿井和沙漠神殿等）。但即使关闭，地牢（dungeon）也会生成。
 
 此项默认为`true`。
 
@@ -231,6 +283,8 @@ server.properties不支持热重载配置,修改后需重启服务器以应用�
 
 创建世界时启用的数据包列表，英文逗号分割。
 
+此项默认为`vanilla`。
+
 -----
 
 ## level-name：存档（世界）名称
@@ -255,7 +309,7 @@ Java：此项默认为`world`。
 
 用于确定世界生成的预设。
 
-使用世界预设 ID 时需要转义 “：”，并且可以省略原版世界预设 ID 的命名空间 minecraft:
+使用世界预设 ID 时需要转义`:`，例如`minecraft\:normal`；并且可以省略原版世界预设 ID 的命名空间`minecraft:`
 
 :::info
 
@@ -287,9 +341,28 @@ Java：此项默认为`world`。
 
 -----
 
+## management-server-*：服务器管理协议（JE 1.21.9新增）
+
+*wiki：用于启用Minecraft服务器管理协议（JSON-RPC over WebSocket），可远程查询和管理服务器状态（玩家、白名单、OP、游戏规则等）。*
+
+| 键 | 默认 | 说明 |
+| :--- | :--- | :--- |
+| management-server-enabled | `false` | 是否启用管理协议。 |
+| management-server-host | `localhost` | 管理协议监听的主机。 |
+| management-server-port | `0` | 管理协议监听的端口。 |
+| management-server-secret | 空白（留空时自动生成40位随机密钥） | 客户端连接时使用的Authorization密钥。 |
+| management-server-allowed-origins | 空白 | 允许的来源（Origin）列表。 |
+| management-server-tls-enabled | `true` | 管理协议是否使用TLS加密。 |
+| management-server-tls-keystore | 空白 | TLS使用的密钥库文件路径，启用TLS但未提供时服务器无法启动。 |
+| management-server-tls-keystore-password | 空白 | TLS密钥库密码。 |
+
+默认全部关闭，一般不用管它。
+
+-----
+
 ## max-players：最大玩家数量
 
-服务器软件上允许的最大玩家数量，如果在线人数达到后将拒绝新玩家连入，op连入不受影响。可以改成114514
+服务器软件上允许的最大玩家数量，如果在线人数达到后将拒绝新玩家连入；仅`ops.json`中`bypassesPlayerLimit`=`true`的OP可在满员时进入。可以改成114514
 
 此项默认值为`20`，最大值为`2147483647`。
 
@@ -354,10 +427,7 @@ SFE-4里可以自己改汉字，也可以用特殊字符把字变成彩色的。
 
 另外，原版服务端中正版验证和离线的uuid不是同一套，此处涉及playerdata的知识。
 
-上面那个playerdata应该有个超链接，但没人写我链什么
-留个坑吧，过几天写关于playerdata
-
-写了。[关于玩家数据的更多信息](8-playerdata.md)
+[关于玩家数据的更多信息](8-playerdata.md)
 
 此项默认值为true，SFE-4中此项默认为false。
 
@@ -386,6 +456,14 @@ op权限等级可设置为1234四个整数，以下是各个等级op的权限：
 
 -----
 
+## pause-when-empty-seconds：无玩家自动暂停
+
+服务器在没有玩家在线达到指定秒数后会自动暂停计算，设为负数则不会自动暂停。（JE 1.21.2新增）
+
+此项默认为`60`。
+
+-----
+
 ## player-idle-timeout：踢掉挂机玩家
 
 wiki：如果不为0，服务器将在玩家的空闲时间达到设置的时间（单位为分钟）时将玩家踢出服务器。
@@ -394,29 +472,9 @@ wiki：如果不为0，服务器将在玩家的空闲时间达到设置的时间
 
 以下操作会重置玩家空闲时间：
 
-  [点击窗口](http://wiki.vg/Protocol#Click_Window)
-  
-  [附魔物品](http://wiki.vg/Protocol#Enchant_Item)
-  
-  [更新告示牌](http://wiki.vg/Protocol#Update_Sign)
-  
-  [挖掘方块](http://wiki.vg/Protocol#Player_Digging)
-  
-  [放置方块](http://wiki.vg/Protocol#Player_Block_Placement)
-  
-  [切换手持物品](http://wiki.vg/Protocol#Held_Item_Change_.28serverbound.29)
-  
-  [动画](http://wiki.vg/Protocol#Animation_.28serverbound.29)注：仅限基岩版
-  
-  [实体动作](http://wiki.vg/Protocol#Entity_Action)
-  
-  [客户端状态](http://wiki.vg/Protocol#Client_Status)
-  
-  [发送聊天信息](http://wiki.vg/Protocol#Chat_Message_.28serverbound.29)
-  
-  [与实体交互](http://wiki.vg/Protocol#Use_Entity)
+  点击窗口、附魔物品、更新告示牌、挖掘方块、放置方块、切换手持物品、动画（注：仅限基岩版）、实体动作、客户端状态、发送聊天信息、与实体交互。
 
-注：以上超链接源自`wiki.vg`，没有中文
+注：以上操作源自[wiki.vg（已并入Minecraft Wiki）](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Protocol)，没有中文。
 
 此项默认为`0`（服务器不会踢人），如果服务器公开且流量大建议开启。
 
@@ -436,15 +494,25 @@ wiki：如果服务器发送的ISP/AS和Mojang的验证服务器的不一样，�
 
 ## pvp：玩家互相攻击
 
+:::warning
+
+此项已于 JE 1.21.9（快照 25w35a）起从`server.properties`中移除，改为游戏规则`pvp`（默认`true`）控制。
+
+:::
+
+以下说明仅适用于旧版本。
+
 如果启用则玩家可以互相攻击，禁用则不行。
 
 此项默认为true。
 
 -----
 
-## query.port：监听开放端口
+## query.port：查询监听端口
 
-设置服务器开放到的端口。别管他
+设置GameSpy4查询监听器使用的UDP端口（参见`enable-query`），仅在`enable-query`=`true`时才有意义。
+
+此项默认为`25565`。
 
 -----
 
@@ -472,6 +540,14 @@ SFE-4所用控制台不属于远程控制台，这两项不用管它
 
 -----
 
+## region-file-compression：区域文件压缩算法
+
+设置区域文件的压缩算法：`deflate`存档体积最小但效率最低，`lz4`兼顾存档体积和效率，`none`不进行压缩。
+
+此项默认为`deflate`。
+
+-----
+
 ## require-resource-pack：需要资源包
 
 *wiki：当此选项启用（设为true）时，玩家会被提示作出选择（是否启用服务器资源包）。如果玩家拒绝则会被服务器断开连接。*编辑服务器里有选服务器资源包是询问、接受还是拒绝，询问则会弹出窗口，接受直接下载资源包并启用，拒绝会被服务器拒绝连接。
@@ -482,7 +558,7 @@ SFE-4所用控制台不属于远程控制台，这两项不用管它
 
 :::
 
-此项默认为空白。
+此项默认为`false`。
 
 -----
 
@@ -503,6 +579,14 @@ SFE-4所用控制台不属于远程控制台，这两项不用管它
 *`250 MiB`（1.18-rc1起）*
 
 *注意，下载成功或失败由客户端记录，而非服务器。*
+
+此项默认为空白。
+
+-----
+
+## resource-pack-id：资源包ID
+
+*wiki：可选，`resource-pack`指定的资源包的UUID，用于客户端标识资源包。*
 
 此项默认为空白。
 
@@ -559,11 +643,19 @@ SFE-4已经配置好了网络环境，请勿调整以上设置。
 
 注：和单人世界的模拟距离是同一个概念。
 
-此项默认值为`10`.（话说wiki提到了了来着）
+此项默认值为`10`.（话说wiki提到了来着）
 
 -----
 
 ## spawn-animals：生成动物
+
+:::warning
+
+此项已从`server.properties`中移除，新版服务端会忽略此键，请改用游戏规则`spawn_mobs`控制动物等生物的自然生成。
+
+:::
+
+以下说明仅适用于旧版本。
 
 决定服务器是否生成动物，关闭则生成后立刻消失。
 
@@ -575,6 +667,14 @@ SFE-4已经配置好了网络环境，请勿调整以上设置。
 
 ## spawn-monsters：生成怪物
 
+:::warning
+
+此项已于 JE 1.21.9（快照 25w35a）起从`server.properties`中移除，改为游戏规则`spawn_monsters`（默认`true`）控制。
+
+:::
+
+以下说明仅适用于旧版本。
+
 决定服务器是否生成怪物，关闭则不会生成。如果`difficulty`=`0`或`peaceful`即游戏难度为和平，此项不会有任何影响。
 
 *wiki还是觉得如果卡就把这项改`false`*
@@ -585,21 +685,35 @@ SFE-4已经配置好了网络环境，请勿调整以上设置。
 
 ## spawn-npcs：生成村民
 
+:::warning
+
+此项已从`server.properties`中移除，新版服务端会忽略此键，请改用游戏规则`spawn_mobs`控制村民等生物的自然生成。
+
+:::
+
+以下说明仅适用于旧版本。
+
 决定服务器是否生成村民，关闭则不会生成。
 
 此项默认值为`true`。
 
 -----
 
-## spawn-protection：重生半径
+## spawn-protection：出生点保护
 
-*wiki：通过将该值进行2x+1的运算来决定出生点的保护半径。设置为1会保护以出生点为中心的3×3方块的区域，2会保护5×5方块的区域，3会保护7×7方块的区域，以此类推。这个选项不在第一次服务器启动时生成，只会在第一个玩家加入服务器时出现。如果服务器没有设置OP，这个选项会自动禁用。*
+*wiki：通过将该值进行2x+1的运算来决定出生点保护区域的边长。设置为1会保护以出生点为中心的3×3方块的区域，2会保护5×5方块的区域，3会保护7×7方块的区域，以此类推。如果服务器没有设置OP，出生点保护不生效。*
 
-*设置为0将不会禁用出生点保护，但会保护位于出生点的那一个方块（13w05a前）。*
-
-*设置为0会禁用出生点保护（13w05a起，参见[MC-666](https://bugs.mojang.com/browse/MC-666)）。*
+*设置为0或负数将禁用出生点保护。*
 
 此项默认值为`16`。
+
+-----
+
+## status-heartbeat-interval：状态心跳间隔
+
+控制管理服务器向已连接的客户端发送心跳通知的间隔，设为`0`则禁用（参见`management-server-*`）。
+
+此项默认为`0`。
 
 -----
 
@@ -613,9 +727,17 @@ SFE-4已经配置好了网络环境，请勿调整以上设置。
 
 ## text-filtering-config：屏蔽文本
 
-在此输入的文本会被服务器屏蔽。
+*wiki：服务器中屏蔽文本的配置，应为一个JSON对象，所有的":"前均需要加"\"转义。仅在Realms内部使用，普通服务器留空即可。*
 
 此项默认值为空白。
+
+-----
+
+## text-filtering-version：屏蔽文本版本
+
+*wiki：服务器中屏蔽文本配置的版本，`0`为旧版格式，`1`为新版格式，其他值会导致屏蔽文本系统无法加载。*
+
+此项默认为`0`。
 
 -----
 
@@ -623,7 +745,7 @@ SFE-4已经配置好了网络环境，请勿调整以上设置。
 
 用于针对Linux平台发送的数据包进行优化。
 
-注：此项仅在Linux平台的服务器上生成。
+注：此项仅对Linux平台生效。
 
 此项默认值为`true`。
 
@@ -649,6 +771,8 @@ SFE-4已经配置好了网络环境，请勿调整以上设置。
 `true` - 从whitelist.json文件加载白名单。
 注: OP会自动被视为在白名单上，所以无需再将OP加入白名单。
 
+此项默认为`true`（JE 26.3起；旧版本为`false`）。[需要验证] SFE-4 实际默认值。
+
 -----
 
 ## log-ips：登入时记录IP
@@ -657,7 +781,7 @@ SFE-4已经配置好了网络环境，请勿调整以上设置。
 
 注：这条设置是JE1.20.2新加的，这条放在最末
 
-此项默认值为true。（我朝，更方便ban-ip了）
+此项默认值为`true`。
 
 -----
 
@@ -665,8 +789,6 @@ SFE-4已经配置好了网络环境，请勿调整以上设置。
 
 [https://server.properties/](https://server.properties/)
 
-里面是一份paper端默认的`server.properties`文档。
+一个可交互的`server.properties`参考站，展示当前版本的默认配置。
 
 如果有人乱篡改配置结果忘了默认的可以来看看。
-
-（这个网页好好玩啊w

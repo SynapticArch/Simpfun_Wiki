@@ -6,7 +6,7 @@ title: 使用整合包开MCJE服
 
 + 如果你打算使用自定义开服的话，请确保你已经具备了一定的开服经验和英文阅读水平。
 + 没有这方面的经验不要轻易尝试这部分的内容！
-+ 我们欢迎大家参与完善文档。请到Github[提交issue](https://github.com/ZengXiaoPi/Simpfun_Wiki/issues)或者[发起Pull Requests](https://github.com/ZengXiaoPi/Simpfun_Wiki/pulls)。
++ 我们欢迎大家参与完善文档。请到Github[提交issue](https://github.com/Twelve-eight/Simpfun_Wiki/issues)或者[发起Pull Requests](https://github.com/Twelve-eight/Simpfun_Wiki/pulls)。
 :::
 
 :::info
@@ -28,8 +28,8 @@ title: 使用整合包开MCJE服
 你需要确定你的整合包是否有 `server pack`。
 确定方法：
 
-* 打开整合包的curseforge页
-* 第2步：![step1](../../static/img/pages/500CreateAModpacksServer-1.png)
+* 第一步：打开整合包的curseforge页
+* 第二步：![step1](../../static/img/pages/500CreateAModpacksServer-1.png)
 * 第三步：![step2](../../static/img/pages/500CreateAModpacksServer-2.png)
 * 结果：
     
@@ -89,7 +89,8 @@ title: 使用整合包开MCJE服
 :::tip
 
 如果是`1.16.5`或更低版本的整合包，请使用`openjdk8`，
-否则使用`openjdk17`
+否则使用`openjdk17`；
+`1.20.5`及以上版本的整合包需要自行导入JDK21（镜像内置仅有JDK8/11/17/19，不含JDK21）
 
 :::
 

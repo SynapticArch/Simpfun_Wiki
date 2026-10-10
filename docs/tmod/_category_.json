@@ -3,12 +3,11 @@
   "label": "TModLoader",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
   "link": {
     "type": "generated-index",
     "title": "TModLoader"
   },
   "customProps": {
-    "description": "This description can be used in the swizzled DocCard"
+    "description": "tModLoader 服务端"
   }
 }

@@ -9,22 +9,22 @@ PRs and issues are welcome!
 
 ## Deploy Websites
 
-Main domain:
-
-[https://simpdoc.top/](https://simpdoc.top/)
-
-Others:
-
-[https://zxp.simpfun.me/](https://zxp.simpfun.me/)
+Canonical domain:
 
 [https://sfe.zxpweb.link/](https://sfe.zxpweb.link/)
 
+Legacy domains:
+
+[https://simpdoc.top/](https://simpdoc.top/)
+
+[https://zxp.simpfun.me/](https://zxp.simpfun.me/)
+
 ## Contributors
 
-<a href="https://github.com/ZengXiaoPi/Simpfun_Wiki/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ZengXiaoPi/Simpfun_Wiki" />
+<a href="https://github.com/Twelve-eight/Simpfun_Wiki/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Twelve-eight/Simpfun_Wiki" />
 </a>
 
 ## LICENSE
 
-This repository is under [MIT](https://github.com/ZengXiaoPi/Simpfun_Wiki/blob/main/LICENSE) license.
+This repository is under [MIT](https://github.com/Twelve-eight/Simpfun_Wiki/blob/main/LICENSE) license.

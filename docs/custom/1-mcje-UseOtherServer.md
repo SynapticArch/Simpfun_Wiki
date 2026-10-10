@@ -7,7 +7,7 @@ title: 使用预设没有的MCJE服务端开服
 :::warning 写在最前面的警告
 
 + 如果你打算使用自定义开服的话，请确保你已经具备了一定的开服经验和英文阅读水平。没有这方面的经验不要轻易尝试这部分的内容！  
-+ 这篇教程不保证覆盖所有服务端类型。如果您发现某种服务端缺少相关教程，请到Github[提交issue](https://github.com/ZengXiaoPi/Simpfun_Wiki/issues)或者[发起Pull Requests](https://github.com/ZengXiaoPi/Simpfun_Wiki/pulls)。我们欢迎大家参与完善文档。
++ 这篇教程不保证覆盖所有服务端类型。如果您发现某种服务端缺少相关教程，请到Github[提交issue](https://github.com/Twelve-eight/Simpfun_Wiki/issues)或者[发起Pull Requests](https://github.com/Twelve-eight/Simpfun_Wiki/pulls)。我们欢迎大家参与完善文档。
 :::
 
 此篇教程分为四个部分，**电脑访问的用户请使用右侧目录栏快速跳转。**
@@ -52,7 +52,7 @@ Vanilla(原版)服务端下载：
 
 + CatServer
   + Github：[https://github.com/Luohuayu/CatServer/releases](https://github.com/Luohuayu/CatServer/releases)
-  + 无极镜像(CN)：[https://www.fastmirror.net/#/download/CatServer](https://www.fastmirror.net/#/download/CatServe)
+  + 无极镜像(CN)：[https://www.fastmirror.net/#/download/CatServer](https://www.fastmirror.net/#/download/CatServer)
 + Arclight
   + Github：[https://github.com/IzzelAliz/Arclight/releases](https://github.com/IzzelAliz/Arclight/releases)
   + 无极镜像(CN)：[https://www.fastmirror.net/#/download/Arclight](https://www.fastmirror.net/#/download/Arclight)
@@ -70,7 +70,7 @@ Vanilla(原版)服务端下载：
 
 打开根目录下的 `start.sh` (在Windows镜像下为`start.cmd`)，添加一行类似下面的命令后保存(不要删除文件里原本的东西，除了最下面那行echo)：
 
-```ini
+```shell
 ${openjdk17} -server -Xms1024M -Xmx${maxmem}M -jar paper-1.19.2-307.jar nogui
 ```
 
@@ -78,13 +78,13 @@ ${openjdk17} -server -Xms1024M -Xmx${maxmem}M -jar paper-1.19.2-307.jar nogui
 
 关于各项参数的说明：
 
-`{openjdk17}`：调用变量`openjdk17`。这个变量在上面的默认内容里被定义过了。1.16.5及以下版本的服务端请将`openjdk17`改为`openjdk8`或`openjdk11`。
+`${openjdk17}`：调用变量`openjdk17`。这个变量在上面的默认内容里被定义过了。1.16.5及以下版本的服务端请将`openjdk17`改为`openjdk8`或`openjdk11`。
 
 `-server`：用于指示 JVM（Java虚拟机）在服务器环境中运行。这个参数实际上是一个优化标记，它告诉JVM使用更适合长时间运行和高性能的配置。
 
 `-Xms1024M`：服务器运行最小内存为1024Mib。你可以更改`1024M`这个值：如果觉得最小运存太大可以改为`512M`或其他值，只要数字部分是4的倍数；如果强迫症不想使用M作为单位，可以改为`1G`，效果同样。
 
-`Xmx${maxmem}M`：服务器运行最大内存为maxmxm M。maxmxm是上文定义的变量，为服务器最大物理内存-1000（单位M）。如果不想要这个~~烦人的~~变量名可以把`${maxmem}`整个改成数字，让它变得和`Xmx`这一项看起来一样。**注：`Xmx`与`Xms`均不要设为超出实例运行内存上限的值，也不要设反了让最大值比最小值小，会导致服务器无法启动！**
+`-Xmx${maxmem}M`：服务器运行最大内存为maxmem M。maxmem是上文定义的变量，为服务器最大物理内存-1000（单位M）。如果不想要这个~~烦人的~~变量名可以把`${maxmem}`整个改成数字，让它变得和`Xms`这一项看起来一样。**注：`Xmx`与`Xms`均不要设为超出实例运行内存上限的值，也不要设反了让最大值比最小值小，会导致服务器无法启动！**
 
 `-jar`：告诉Java你要启动jar文件。此项不要调整。
 
@@ -195,25 +195,25 @@ ${openjdk17} -Xmx1500m -jar BuildTools.jar --rev 版本号
 
 然后再添加一行类似下面的命令后保存(不要删除文件里原本的东西，除了最下面那行echo)：
 
-```ini
-${openjdk17} -server -Xms1024M -Xmx${maxmem}M -jar Spigot-1.20.2-3941.jar nogui
+```shell
+${openjdk17} -server -Xms1024M -Xmx${maxmem}M -jar spigot-1.20.2.jar nogui
 ```
 
 :::info
 
 关于各项参数的说明：
 
-`{openjdk17}`：调用变量`openjdk17`。这个变量在上面的默认内容里被定义过了。1.16.5及以下版本的服务端请将`openjdk17`改为`openjdk8`或`openjdk11`。
+`${openjdk17}`：调用变量`openjdk17`。这个变量在上面的默认内容里被定义过了。1.16.5及以下版本的服务端请将`openjdk17`改为`openjdk8`或`openjdk11`。
 
 `-server`：用于指示 JVM（Java虚拟机）在服务器环境中运行。这个参数实际上是一个优化标记，它告诉JVM使用更适合长时间运行和高性能的配置。
 
 `-Xms1024M`：服务器运行最小内存为1024Mib。你可以更改`1024M`这个值：如果觉得最小运存太大可以改为`512M`或其他值，只要数字部分是4的倍数；如果强迫症不想使用M作为单位，可以改为`1G`，效果同样。
 
-`Xmx${maxmem}M`：服务器运行最大内存为maxmxm M。maxmxm是上文定义的变量，为服务器最大物理内存-1000（单位M）。如果不想要这个~~烦人的~~变量名可以把`${maxmem}`整个改成数字，让它变得和`Xmx`这一项看起来一样。**注：`Xmx`与`Xms`均不要设为超出实例运行内存上限的值，也不要设反了让最大值比最小值小，会导致服务器无法启动！**
+`-Xmx${maxmem}M`：服务器运行最大内存为maxmem M。maxmem是上文定义的变量，为服务器最大物理内存-1000（单位M）。如果不想要这个~~烦人的~~变量名可以把`${maxmem}`整个改成数字，让它变得和`Xms`这一项看起来一样。**注：`Xmx`与`Xms`均不要设为超出实例运行内存上限的值，也不要设反了让最大值比最小值小，会导致服务器无法启动！**
 
 `-jar`：告诉Java你要启动jar文件。此项不要调整。
 
-`Spigot-1.20.2-3941.jar`：服务端核心名称，**改成构建的/自己上传的，包括刚才让你记的后缀名！！**
+`spigot-1.20.2.jar`：服务端核心名称，**改成构建的/自己上传的，包括刚才让你记的后缀名！！**（BuildTools构建产物的文件名为`spigot-版本号.jar`，以实际产物为准）
 
 `nogui`：不启用MC服务端自带的一个GUI窗口，在面板服/命令行环境运行服务端时不能删！
 
@@ -306,7 +306,7 @@ Forge官网下载会有广告 ，而且这个广告国内不加载导致你下�
 
 NeoForge：
 
-1.20.1：打开[NeoForge官网](https://neoforged.net/)，选择你需要的版本的NeoForge安装器进行下载，1.20.1为上面的那个。
+1.20.1：打开[NeoForged项目清单](https://projects.neoforged.net/neoforged/neoforge)，在右侧选择MC版本1.20.1与需要的加载器版本后下载安装器（NeoForge官网首页只展示最新主线版本的安装器，1.20.1需在项目清单中选择）。
 
 ![Anywhere I go I’ll miss you](../../static/img/pages/UseOtherServer-12.png)
 
@@ -353,13 +353,13 @@ ${openjdk17} -server -Xms1024m -Xmx${maxmem}M @libraries/net/minecraftforge/forg
 
 关于各项参数的说明：
 
-`{openjdk17}`：调用变量`openjdk17`。这个变量在上面的默认内容里被定义过了。
+`${openjdk17}`：调用变量`openjdk17`。这个变量在上面的默认内容里被定义过了。
 
 `-server`：用于指示 JVM（Java虚拟机）在服务器环境中运行。这个参数实际上是一个优化标记，它告诉JVM使用更适合长时间运行和高性能的配置。
 
 `-Xms1024M`：服务器运行最小内存为1024Mib。你可以更改`1024M`这个值：如果觉得最小运存太大可以改为`512M`或其他值，只要数字部分是4的倍数；如果强迫症不想使用M作为单位，可以改为`1G`，效果同样。
 
-`-Xmx${maxmem}M`：服务器运行最大内存为maxmxm M。maxmxm是上文定义的变量，为服务器最大物理内存-1000（单位M）。如果不想要这个~~烦人的~~变量名可以把`${maxmem}`整个改成数字，让它变得和`Xmx`这一项看起来一样。**注：`Xmx`与`Xms`均不要设为超出实例运行内存上限的值，也不要设反了让最大值比最小值小，会导致服务器无法启动！**
+`-Xmx${maxmem}M`：服务器运行最大内存为maxmem M。maxmem是上文定义的变量，为服务器最大物理内存-1000（单位M）。如果不想要这个~~烦人的~~变量名可以把`${maxmem}`整个改成数字，让它变得和`Xms`这一项看起来一样。**注：`Xmx`与`Xms`均不要设为超出实例运行内存上限的值，也不要设反了让最大值比最小值小，会导致服务器无法启动！**
 
 `@libraries/net/minecraftforge/forge/1.17.1-37.1.1/unix_args.txt "$@"`：这个命令是用于启动 Minecraft Forge 1.17.1-37.1.1 的一系列参数设置。它包括引用用户定义的 JVM 参数文件和 Forge 所需的 UNIX 系统下启动参数文件，然后将这些参数传递给 Forge 的执行命令。不同Forge版本此参数里的版本号不同。
 
@@ -459,13 +459,13 @@ ${openjdk17} -server -Xms1024M -Xmx${maxmem}M -jar fabric-server-launch.jar -nog
 
 关于各项参数的说明：
 
-`{openjdk17}`：调用变量`openjdk17`。这个变量在上面的默认内容里被定义过了。
+`${openjdk17}`：调用变量`openjdk17`。这个变量在上面的默认内容里被定义过了。
 
 `-server`：用于指示 JVM（Java虚拟机）在服务器环境中运行。这个参数实际上是一个优化标记，它告诉JVM使用更适合长时间运行和高性能的配置。
 
 `-Xms1024M`：服务器运行最小内存为1024Mib。你可以更改`1024M`这个值：如果觉得最小运存太大可以改为`512M`或其他值，只要数字部分是4的倍数；如果强迫症不想使用M作为单位，可以改为`1G`，效果同样。
 
-`-Xmx${maxmem}M`：服务器运行最大内存为maxmxm M。maxmxm是上文定义的变量，为服务器最大物理内存-1000（单位M）。如果不想要这个~~烦人的~~变量名可以把`${maxmem}`整个改成数字，让它变得和`Xmx`这一项看起来一样。**注：`Xmx`与`Xms`均不要设为超出实例运行内存上限的值，也不要设反了让最大值比最小值小，会导致服务器无法启动！**
+`-Xmx${maxmem}M`：服务器运行最大内存为maxmem M。maxmem是上文定义的变量，为服务器最大物理内存-1000（单位M）。如果不想要这个~~烦人的~~变量名可以把`${maxmem}`整个改成数字，让它变得和`Xms`这一项看起来一样。**注：`Xmx`与`Xms`均不要设为超出实例运行内存上限的值，也不要设反了让最大值比最小值小，会导致服务器无法启动！**
 
 `-jar`：告诉Java你要启动jar文件。此项不要更改或删除。
 

@@ -3,12 +3,11 @@
   "label": "自定义",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
   "link": {
     "type": "generated-index",
     "title": "自定义"
   },
   "customProps": {
-    "description": "This description can be used in the swizzled DocCard"
+    "description": "自定义服务端/高级用法"
   }
 }

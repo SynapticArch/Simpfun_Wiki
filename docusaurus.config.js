@@ -33,11 +33,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/ZengXiaoPi/Simpfun_Wiki/edit/main/",
+          editUrl: "https://github.com/Twelve-eight/Simpfun_Wiki/edit/main/",
         },
         blog: {
           showReadingTime: true,
-          editUrl: "https://github.com/ZengXiaoPi/Simpfun_Wiki/edit/main/",
+          editUrl: "https://github.com/Twelve-eight/Simpfun_Wiki/edit/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -63,7 +63,7 @@ const config = {
             label: "主页",
           },
           {
-            href: "https://github.com/ZengXiaoPi/Simpfun_Wiki",
+            href: "https://github.com/Twelve-eight/Simpfun_Wiki",
             label: "GitHub",
             position: "right",
           },
@@ -107,7 +107,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/ZengXiaoPi/Simpfun_Wiki",
+                href: "https://github.com/Twelve-eight/Simpfun_Wiki",
               },
             ],
           },

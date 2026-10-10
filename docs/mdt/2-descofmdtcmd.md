@@ -38,9 +38,9 @@ xxx帧率/xxx内存被占用
 
 - **pause**：暂停游戏（就平时你打单人的时候的那个暂停)。语法：**pause 选项    选项：on－开启   off－关闭**
 
-- **rules**：等大佬来补坑
+- **rules**：查看或修改全局游戏规则。语法：**rules 参数。参数：不带参数－列出当前规则   remove 规则名－移除某条规则   add 规则名 值－添加/修改规则**（修改的规则对所有地图生效）
 
--**fillitems**：向核心内填满物品。语法:**等大佬填坑**
+- **fillitems**：向核心内填满物品。语法：**fillitems [队伍]**```（不填队伍时默认向玩家队伍的核心填充）```
 
 - **playerlimit**：服务器玩家数量限制。语法：**playerlimit 参数。参数：off－不限制   数字－限制xx人**（就比方说playerlimit 2 就服务器限制2人）
 
@@ -59,7 +59,7 @@ xxx帧率/xxx内存被占用
 你也知道mdt是可以重名的但ID是唯一的
 ```
 
-- **shuffle**：混洗地图（随机地图的意思)。语法：*shuffle 参数。参数：none－不混洗  all－全部地图一起洗  custom－自己的地图一起洗  builtin－内置地图一起洗**。```注意：当shuffle不为none的时候，host可以不带参数，不然会报错直接给你免费执行一个exit（指host）```
+- **shuffle**：混洗地图（随机地图的意思)。语法：**shuffle 参数。参数：none－不混洗  all－全部地图一起洗  custom－自己的地图一起洗  builtin－内置地图一起洗**。```注意：当shuffle不为none的时候，host可以不带参数，不然会报错直接给你免费执行一个exit（指host）```
 
 - **nextmap**：设置游戏结束后的下一张地图（预定)。语法：**nextmap 地图名字**
 
@@ -127,7 +127,7 @@ Did you mean "ban"?
 ```
 
 - **config**：***配置文件***（放在最后讲是因为这里面的内容真的很多)。语法：***config 名字 值***
-####你以为这就是  极限  了吗？？？？
+**你以为这就是  极限  了吗？？？？**
 ***
 当你只输入一个config的时候它会给你显示可以配置的选项以及默认选项，下面是部分参数的讲解/doge
 ```
@@ -158,6 +158,6 @@ Did you mean "ban"?
     autosave：自动保存 值：true/false
     autosaveSpacing：自动保存间隔 单位是秒 值：数字
     debug：调试功能开不开（不太建议一般时候一般人开，因为这样你的控制台会很乱） 值：true/false
-    snapshotInterval：客户端实体快照间隔（毫秒)(咱还是不知道这是干嘛的） 值L数字
+    snapshotInterval：客户端实体快照间隔（毫秒)(咱还是不知道这是干嘛的） 值：数字
     autoPause：没人在线就自动暂停（注意这个默认值是关闭） 值：true/false
 ```
